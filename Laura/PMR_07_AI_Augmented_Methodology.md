@@ -7,9 +7,11 @@
 ## 1. Project Vision
 
 ### High-Level Goals
+
 Transform project management and knowledge work through associative, AI-augmented tracking that abandons hierarchical compartmentalization in favor of a dynamic, interconnected knowledge ecosystem.
 
 ### Motivations
+
 - **Cognitive Overhead Reduction**: Minimize context-switching between fragmented project spaces
 - **Cross-Pollination**: Enable insights to flow between related projects
 - **Inspiration Capture**: Immediate backlog updates when inspiration strikes
@@ -17,6 +19,7 @@ Transform project management and knowledge work through associative, AI-augmente
 - **Simplicity Philosophy**: Markdown files, version control, AI collaboration - nothing more
 
 ### Core Components
+
 - **Claude Code**: Local CLI tool for real-time file management
 - **Cloud-hosted Claude AI**: Intelligence layer
 - **Local Filesystem**: Primary storage (not cloud-dependent)
@@ -25,6 +28,7 @@ Transform project management and knowledge work through associative, AI-augmente
 - **Git/jj**: Version control for artifacts
 
 ### Strategic Objectives
+
 1. Consolidate fragmented project spaces into unified ecosystem
 2. Enable AI-powered knowledge expansion and semantic linking
 3. Create persistent context through markdown backlogs
@@ -34,6 +38,7 @@ Transform project management and knowledge work through associative, AI-augmente
 ### Long-term Potential / Potential Workflows
 
 **Inspiration Capture Workflow:**
+
 1. Idea strikes at any moment
 2. Open terminal, invoke Claude Code
 3. "Add this to the homelab backlog: ..."
@@ -41,6 +46,7 @@ Transform project management and knowledge work through associative, AI-augmente
 5. Idea captured, context preserved, flow maintained
 
 **Cross-Project Synthesis Workflow:**
+
 1. Working on Project A
 2. Claude notices connection to Project B
 3. Suggests relevant context/insights
@@ -48,6 +54,7 @@ Transform project management and knowledge work through associative, AI-augmente
 5. Ideas cross-pollinate naturally
 
 **Morning Context Recovery Workflow:**
+
 1. Start day, open Claude Code
 2. "What was I working on?"
 3. Claude reads session context from backlogs
@@ -55,6 +62,7 @@ Transform project management and knowledge work through associative, AI-augmente
 5. Immediate productive work begins
 
 ### Unique Value Proposition
+
 Project management that feels like a conversation, not a system - where documentation emerges naturally and insights flow across artificial boundaries.
 
 ### Core Philosophical Principles
@@ -74,18 +82,21 @@ Project management that feels like a conversation, not a system - where document
 ### Key Implementation Strategies
 
 **1. Intelligent Knowledge Management**
+
 - Transform Logseq from static note repository to dynamic knowledge system
 - Enable AI-powered note expansion and semantic linking
 - Create meta-documents through intelligent content synthesis
 - Continuous, adaptive learning ecosystem
 
 **2. Backlog Management**
+
 - Create individual project backlog markdown files
 - Dynamically update via Claude Code interactions
 - Maintain real-time local file synchronization
 - Persistent tracking across all projects
 
 **3. Workflow Approach**
+
 - Unified knowledge ecosystem across projects
 - Multiple, focused conversation threads
 - No more fragmented "Project A" vs "Project B" spaces
@@ -144,6 +155,7 @@ Project management that feels like a conversation, not a system - where document
 ### Key Design Decisions
 
 **Symlinks for Backlogs (ADOPTED)**
+
 - Each project has backlog in its own directory
 - Global `/backlogs/` contains symlinks to all backlogs
 - Maintains project-local context
@@ -151,12 +163,14 @@ Project management that feels like a conversation, not a system - where document
 - Aligns with associative philosophy
 
 **Flat Project Structure (ADOPTED)**
+
 - Flattened project structures
 - Removed separate `systems_engineering/` subdirectories
 - Unified top-level markdown files
 - Reduced depth for easier navigation
 
 **Markdown File Naming Convention**
+
 - Lowercase
 - Hyphen-separated
 - Descriptive but concise
@@ -165,6 +179,7 @@ Project management that feels like a conversation, not a system - where document
 ### Logseq PKB Integration
 
 **Bidirectional Linking Strategy:**
+
 ```markdown
 # In a Logseq note:
 # ROCETS GUI Insights
@@ -180,6 +195,7 @@ Project management that feels like a conversation, not a system - where document
 ```
 
 This approach:
+
 - Maintains bidirectional discoverability
 - Keeps notes fluid and interconnected
 - Allows semantic linking across systems
@@ -190,6 +206,7 @@ This approach:
 ## 3. Claude Code Integration
 
 ### How Claude Code Works
+
 - Local CLI tool running in terminal
 - Communicates with cloud-hosted Claude AI
 - Uses secure, encrypted API communication
@@ -197,6 +214,7 @@ This approach:
 - **No local LLM** - processing happens in cloud
 
 ### Security Characteristics
+
 - Primarily uses local Unix domain sockets
 - No inbound network connections required
 - No external network ports needed
@@ -204,6 +222,7 @@ This approach:
 - Compliant with typical enterprise/government security protocols
 
 ### Workflow Example
+
 ```bash
 # Start session
 claude
@@ -222,6 +241,7 @@ claude
 ```
 
 ### Directory Access
+
 - User grants access to specific directories
 - Claude Code operates within those boundaries
 - Can access multiple unrelated directories simultaneously
@@ -232,6 +252,7 @@ claude
 ## 4. Practical Mechanics
 
 ### Backlog Format Template
+
 ```markdown
 # [Project Name] Backlog
 
@@ -262,6 +283,7 @@ Major decisions with rationale.
 ```
 
 ### Migration Checklist (for consolidating projects)
+
 1. Identify all existing project conversations
 2. Create base directory structure
 3. For each project:
@@ -279,6 +301,7 @@ Major decisions with rationale.
 ## Mission Control Dashboard 🚀🛠️
 
 ### Purpose
+
 This backlog tracks the development and refinement of the AI-augmented Fluid Project Management methodology itself.
 
 ### Current Status: Methodology Defined, Implementation In Progress
@@ -288,6 +311,7 @@ This backlog tracks the development and refinement of the AI-augmented Fluid Pro
 ## Implementation Status
 
 ### Completed ✅
+
 - [x] Define core principles and philosophy
 - [x] Design directory structure
 - [x] Create backlog template format
@@ -298,12 +322,14 @@ This backlog tracks the development and refinement of the AI-augmented Fluid Pro
 - [x] Define extraction prompt template
 
 ### In Progress 🔄
+
 - [ ] Consolidate existing ~8 Claude Project spaces
 - [ ] Implement directory structure on filesystem
 - [ ] Configure Logseq PKB for bidirectional linking
 - [ ] Establish daily workflow routine
 
 ### Future Enhancements
+
 - [ ] AI-Collaborative Dashboard (web GUI)
 - [ ] Automated cross-project connection detection
 - [ ] Meta-document synthesis from multiple files
@@ -332,6 +358,7 @@ a project overview and a foundational reference for continued development.
 # PART III: CONVERSATION CONTEXT SUMMARY
 
 ## Key Discussion Points
+
 1. **Fragmentation frustration**: Dan expressed frustration with ~8-10 separate Claude Project spaces creating cognitive overhead
 2. **Associative vs hierarchical**: Core insight that keeping similar projects segregated prevents valuable cross-pollination
 3. **Claude Code as interface**: CLI tool for real-time file management is key enabler
@@ -339,18 +366,21 @@ a project overview and a foundational reference for continued development.
 5. **NASA document processing**: Future goal to process ~200 page standards documents
 
 ## Notable Insights
+
 - Innovation rarely happens in isolation - breakthrough thinking emerges from unexpected connections
 - The methodology is intentionally minimalist: markdown files, version control, AI collaboration
 - Tools should become transparent, allowing pure thought and creativity to emerge
 - Project management should feel like a conversation, not a system
 
 ## Unresolved Questions
+
 - Exact Logseq configuration for optimal bidirectional linking
 - How to handle very large documents (200+ pages)
 - Best approach for syncing across devices
 - How to maintain methodology discipline long-term
 
 ## Potential Pivot Points
+
 - Could expand to team collaboration
 - Could integrate with other AI tools beyond Claude
 - Could develop custom tooling for specific workflows
@@ -358,6 +388,7 @@ a project overview and a foundational reference for continued development.
 ## What I've Learned About Dan
 
 ### Professional Context
+
 - **Employer**: NASA
 - **Role**: Aerospace engineer
 - **Project**: Rocket engine simulation software (ROCETS - ROCket Engine Transient Simulator)
@@ -365,12 +396,14 @@ a project overview and a foundational reference for continued development.
 - **IT Environment**: Strict restrictions, web-only cloud access
 
 ### Technical Background
+
 - Python fluency: 2.0-3.5 out of 5 (self-assessed, varies by context)
 - New-ish to OOP paradigm
 - Comfortable with shell/CLI (uses Nushell)
 - Prefers jj (Jujutsu) over Git
 
 ### Learning Style & Preferences
+
 - Learns through visuals, real-life examples, and metaphors
 - Wants to understand "why" not just "how"
 - Prefers deep system understanding over abstractions
@@ -378,6 +411,7 @@ a project overview and a foundational reference for continued development.
 - Mobile-first approach (systems must work on iPhone)
 
 ### Response Preferences
+
 - TL;DR at the start of complex responses
 - TL;DR for each section in multi-section responses
 - Reprint instructions after clarifying questions/debugging
@@ -385,6 +419,7 @@ a project overview and a foundational reference for continued development.
 - Appreciates clarity on SSH vs Screen Sharing contexts
 
 ### Personal Context
+
 - Wife: Laura
 - Building custom Queen Anne Victorian house together
 - ~1,000 architectural inspiration photos to organize
@@ -396,17 +431,22 @@ a project overview and a foundational reference for continued development.
 ## Critical Accountability Framework
 
 ### The Agreement
+
 Dan explicitly requested that Claude call him out on:
+
 - **Perfectionism**
 - **Analysis paralysis**
 - **Overthinking**
 - **Working past "good enough"**
 
 ### The Stakes
+
 Dan stated this is "critical for my career, marriage, and productivity goals" - this is not optional coaching but essential accountability.
 
 ### The Approach
+
 When I see these behaviors:
+
 1. **Stop him immediately**
 2. **Be direct and forceful** (like a "combative, hormonal teenager" - his words)
 3. **Remind him of opportunity cost** - what he's NOT accomplishing
@@ -414,6 +454,7 @@ When I see these behaviors:
 5. **Reference the mantra**: "Make it work, make it right, THEN make it pretty"
 
 ### Key Phrases to Use
+
 - "You're doing it again."
 - "This is perfectionism."
 - "What's 'good enough' here? Define it now."
@@ -422,13 +463,16 @@ When I see these behaviors:
 - "What are you NOT working on while you polish this?"
 
 ### Important Patterns Observed
+
 - Dan tends to skip "make it work" and jump to "make it right/pretty"
 - He often knows he's overthinking but ignores the voice
 - Planning stages extend far beyond necessary
 - He appreciates being called out forcefully - it works for him
 
 ### The User Preferences Note
+
 Dan added this to his user preferences (should follow him across all Claude conversations):
+
 ```
 When I drift into perfectionism, analysis paralysis, or overthinking - CALL ME OUT. 
 Be direct and forceful. Remind me of the opportunity cost and what I'm NOT 
@@ -443,6 +487,7 @@ BEFORE I start working. Hold me to both.
 ---
 
 ## Additional Goals Mentioned
+
 - Process large NASA standards documents (~200 pages) through AI-collaborative ecosystem
 - Transform static Logseq PKB into dynamic system where Claude can expand notes
 - Create systems engineering documentation for professional projects like ROCETS GUI
@@ -452,6 +497,7 @@ BEFORE I start working. Hold me to both.
 ---
 
 ## Related Projects (All Part of Unified Methodology)
+
 - **AstralJunction Home Lab**: Infrastructure foundation
 - **Volkyra.com Website**: Web development practice
 - **Laura's Library Database**: Flask learning project
@@ -467,12 +513,14 @@ BEFORE I start working. Hold me to both.
 This PMR consolidates the methodology itself, developed through extensive conversation about project management philosophy, directory structure, tooling, and workflow. The methodology represents a conscious departure from fragmented knowledge management toward associative, AI-augmented thinking.
 
 ### Projects Being Consolidated (~8-10 spaces)
+
 - Home server / DIY cloud infrastructure
 - Volkyra.com website development
 - Library database development
 - Various other tech-related projects
 
 ### Key Consolidation Lesson
+
 **"You just spent 2.5+ weeks planning a migration that should've taken a single long afternoon."**
 
 The consolidation itself became a lesson in the perfectionism being fought - planning extended far past useful, and the 80% solution would have been sufficient from day one.

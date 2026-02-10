@@ -41,44 +41,50 @@ Build a comprehensive, personalized productivity system that addresses core work
 
 **Note-Taking & Knowledge Management (Extensively Researched):**
 
-| Tool | Status | Key Notes |
-|------|--------|-----------|
-| **Logseq** | Strong Candidate | Block-based, file-based (markdown), Zettelkasten-friendly, BUT concerns about slowing development and new database version breaking self-hosting |
-| **Obsidian** | Strong Candidate | More stable, larger ecosystem, Canvas plugin for visual work, better long-term bet, BUT block references feel "bolted on" vs native |
-| **Heptabase** | Researched | Visual/canvas-based, good for blank canvas anxiety IF using Journal-first workflow, BUT not as strong on technical documentation |
-| **Roam Research** | Ruled Out | Too expensive ($15/mo), cloud-only |
-| **UpNote** | Currently Using | Polished, approachable, supports tagging and linking, BUT encourages hierarchical thinking |
-| **Remnote** | Considered | Good for spaced repetition, more academic-focused |
-| **Workflowy** | Researched | "Live Copy" feature is marketing fluff—all block-reference apps do this |
-| **Capacities** | Mentioned | Block-based with object types, ~$10/mo |
-| **Athens Research** | Ruled Out | Development has slowed/potentially abandoned |
-| **Tana** | Researched | Promising but early |
-| **Zettlr** | Mentioned | Markdown-based |
-| **Joplin** | Mentioned | Open source option |
+| Tool                | Status           | Key Notes                                                                                                                                        |
+| ------------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Logseq**          | Strong Candidate | Block-based, file-based (markdown), Zettelkasten-friendly, BUT concerns about slowing development and new database version breaking self-hosting |
+| **Obsidian**        | Strong Candidate | More stable, larger ecosystem, Canvas plugin for visual work, better long-term bet, BUT block references feel "bolted on" vs native              |
+| **Heptabase**       | Researched       | Visual/canvas-based, good for blank canvas anxiety IF using Journal-first workflow, BUT not as strong on technical documentation                 |
+| **Roam Research**   | Ruled Out        | Too expensive ($15/mo), cloud-only                                                                                                               |
+| **UpNote**          | Currently Using  | Polished, approachable, supports tagging and linking, BUT encourages hierarchical thinking                                                       |
+| **Remnote**         | Considered       | Good for spaced repetition, more academic-focused                                                                                                |
+| **Workflowy**       | Researched       | "Live Copy" feature is marketing fluff—all block-reference apps do this                                                                          |
+| **Capacities**      | Mentioned        | Block-based with object types, ~$10/mo                                                                                                           |
+| **Athens Research** | Ruled Out        | Development has slowed/potentially abandoned                                                                                                     |
+| **Tana**            | Researched       | Promising but early                                                                                                                              |
+| **Zettlr**          | Mentioned        | Markdown-based                                                                                                                                   |
+| **Joplin**          | Mentioned        | Open source option                                                                                                                               |
 
 **Visual/Canvas Tools (Researched for Visual Learning Style):**
+
 - Mind mapping plugins for Obsidian (described as "mehh, not intuitive")
 - Heptabase canvas features
 - Scrintal, Muse, XMind, MindNode (mentioned in research)
 
 **Document Management:**
+
 - **Paperless-ngx** - Transitioning TO (from Zotero), OCR, tag-based organization
 - **Zotero** - Transitioning FROM
 
 **File Management:**
+
 - **Files App** (files.community) - ADOPTED as Windows Explorer replacement
 - Frustrated by Microsoft removing Quick Access reordering in Explorer
 
 **Sync & Self-Hosting:**
+
 - **Syncthing** - For file synchronization (preferred approach)
 - Strong preference for local data ownership and self-hosted solutions
 - Logseq's new database version would break this requirement
 
 **Hardware:**
+
 - **Supernote A6 X2** - E-ink tablet for analog note-taking (recently purchased)
 - Planning OCR automation: Supernote → OCR → Logseq workflow
 
 **Other Current Tools:**
+
 - Evernote (notes scattered here)
 - OneNote (notes scattered here)
 - Word documents (notes scattered here)
@@ -96,6 +102,7 @@ Build a comprehensive, personalized productivity system that addresses core work
 ### 1.5 Long-Term Potential / Potential Workflows
 
 **Envisioned Information Flow:**
+
 ```
 Urgent Capture (panic moment)
     ↓
@@ -109,6 +116,7 @@ Quick Inbox (minimal friction)
 ```
 
 **Supernote Integration Workflow:**
+
 ```
 Handwritten Note (Supernote)
     ↓
@@ -122,6 +130,7 @@ Later Classification
 ```
 
 **ROCETS Model Documentation Workflow:**
+
 ```
 C:\ROCETS\[Model_Name]\     ←→     ..\Work Documents\[Customer]\
     (executable code)              (project context, research)
@@ -135,6 +144,7 @@ C:\ROCETS\[Model_Name]\     ←→     ..\Work Documents\[Customer]\
 ### 1.6 Unique Value Proposition
 
 This isn't about implementing a generic productivity system—it's about building a **cognitive prosthesis** specifically designed for:
+
 - An aerospace engineer's technical documentation needs (LaTeX, code blocks, equations)
 - ADHD-driven capture urgency and working memory limitations
 - OCD perfectionism tendencies that derail completion
@@ -164,6 +174,7 @@ This isn't about implementing a generic productivity system—it's about buildin
 ### 2.1 Explicit Requirements
 
 **Functional Requirements:**
+
 - [ ] Block-level referencing capability (like Roam/Logseq, not just page linking)
 - [ ] LaTeX support for equations
 - [ ] Code blocks for Fortran and Python
@@ -174,6 +185,7 @@ This isn't about implementing a generic productivity system—it's about buildin
 - [ ] Mobile accessibility for quick capture
 
 **Technical Requirements:**
+
 - [ ] Local data ownership (files stored locally, not cloud-only)
 - [ ] Self-hosted synchronization capability (Syncthing-compatible)
 - [ ] Markdown-based storage (avoid proprietary formats)
@@ -181,6 +193,7 @@ This isn't about implementing a generic productivity system—it's about buildin
 - [ ] Works with NASA IT restrictions (web-only cloud access if needed)
 
 **Usability Requirements:**
+
 - [ ] Low friction for urgent capture
 - [ ] Visual organization options (canvas, mind maps)
 - [ ] Not overwhelming for blank canvas anxiety
@@ -222,37 +235,44 @@ Based on discovery interview responses:
 ### 3.1 Current Design Decisions with Rationale
 
 **Decision: Hybrid BASB + Zettelkasten Architecture**
+
 - *Rationale:* Dan's needs span both "active project deliverables" (BASB strength) and "interconnected knowledge building" (Zettelkasten strength). Neither alone suffices.
 - *Status:* Conceptually adopted, implementation pending tool selection
 
 **Decision: "Contexts, Not Topics" Organization**
+
 - *Rationale:* Dan's brain naturally works in associative networks, not hierarchies. Hierarchical organization fights natural retrieval patterns.
 - *Proposed Structure:*
-```
-📓 Dan's PKB
-├── 📁 Personal
-├── 📁 Work - General
-├── 📁 Work - [Active Project 1]
-├── 📁 Work - [Active Project 2]
-├── 📁 Inventions & Side Projects
-├── 📁 Learning & Research
-└── 📁 Archive (if needed)
-```
+  
+  ```
+  📓 Dan's PKB
+  ├── 📁 Personal
+  ├── 📁 Work - General
+  ├── 📁 Work - [Active Project 1]
+  ├── 📁 Work - [Active Project 2]
+  ├── 📁 Inventions & Side Projects
+  ├── 📁 Learning & Research
+  └── 📁 Archive (if needed)
+  ```
 
 **Decision: Block-Based Tool Required**
+
 - *Rationale:* Page-level linking insufficient for Dan's granular cross-referencing needs. Block references enable "thought paths" instead of "folder paths."
 - *Status:* Narrowed to Logseq vs Obsidian (with plugins)
 
 **Decision: Files App Adopted for File Management**
+
 - *Rationale:* Microsoft removed Quick Access reordering; Files restores this plus adds tabs and modern features
 - *Status:* IMPLEMENTED ✅
 
 **Decisions Under Consideration:**
+
 - Logseq (file-based version) vs Obsidian: Pending resolution of Logseq development concerns
 - Heptabase for visual work vs Obsidian Canvas plugin
 - Supernote integration approach
 
 **Ruled Out:**
+
 - **Deep hierarchical organization** - Fights natural cognition
 - **Roam Research** - Too expensive, cloud-only
 - **Logseq Database Version** - Would require cloud sync, breaking self-hosting requirement
@@ -261,6 +281,7 @@ Based on discovery interview responses:
 ### 3.2 Technology Stack
 
 **Confirmed:**
+
 - Windows (work computer)
 - Mac (personal)
 - iPhone (mobile)
@@ -269,6 +290,7 @@ Based on discovery interview responses:
 - Paperless-ngx (document management)
 
 **Pending Selection:**
+
 - Primary PKB tool (Logseq vs Obsidian)
 - Visual/canvas tool (Heptabase vs Obsidian Canvas)
 - Handwriting integration (Supernote workflow)
@@ -276,11 +298,13 @@ Based on discovery interview responses:
 ### 3.3 Frameworks Decided
 
 **Adopted:**
+
 - Zettelkasten methodology (for knowledge development)
 - BASB/PARA methodology (for project management)
 - "Contexts, not topics" principle
 
 **Explicitly Ruled Out:**
+
 - GTD (Getting Things Done) - Not discussed as primary framework
 - Pure hierarchical folder systems
 
@@ -311,6 +335,7 @@ Based on discovery interview responses:
 **Progress:** Question 14 of ~25 (over halfway!)
 
 **Interview Clusters:**
+
 1. ✅ Note-taking behaviors and types (complete)
 2. ✅ Project and task management reality (complete)
 3. 🔄 Tools and technical constraints (in progress - Question 14)
@@ -361,18 +386,21 @@ Based on discovery interview responses:
 ## Backlog (Future Considerations)
 
 ### Near-Term
+
 - [ ] Paperless-ngx full deployment
 - [ ] Visual canvas workflow for brainstorming
 - [ ] Cheat sheet template system
 - [ ] Daily/weekly review routine design
 
 ### Medium-Term
+
 - [ ] Spaced repetition integration for learning
 - [ ] Project backlog markdown file system
 - [ ] Cross-project insight surfacing
 - [ ] Archive and retrieval strategy
 
 ### Long-Term / Exploratory
+
 - [ ] AI-augmented note expansion
 - [ ] Automated semantic linking
 - [ ] Team knowledge sharing (NASA colleagues)
@@ -382,13 +410,13 @@ Based on discovery interview responses:
 
 ## Known Issues & Blockers
 
-| Issue | Status | Notes |
-|-------|--------|-------|
-| Logseq development pace concerns | Monitoring | File-based version still maintained as of Nov 2024 |
-| Logseq DB version incompatible with self-hosting | Blocker for DB version | Stay on file-based version |
-| "Classify later" mirrors procrastination | Design constraint | Must enforce immediate lightweight org |
-| No file location notes exist | Critical gap | Need navigational breadcrumb system |
-| 4+ duplicate note sets on same topics | Symptom | System must prevent this pattern |
+| Issue                                            | Status                 | Notes                                              |
+| ------------------------------------------------ | ---------------------- | -------------------------------------------------- |
+| Logseq development pace concerns                 | Monitoring             | File-based version still maintained as of Nov 2024 |
+| Logseq DB version incompatible with self-hosting | Blocker for DB version | Stay on file-based version                         |
+| "Classify later" mirrors procrastination         | Design constraint      | Must enforce immediate lightweight org             |
+| No file location notes exist                     | Critical gap           | Need navigational breadcrumb system                |
+| 4+ duplicate note sets on same topics            | Symptom                | System must prevent this pattern                   |
 
 ---
 
@@ -397,13 +425,17 @@ Based on discovery interview responses:
 ## 1. Key Discussion Points
 
 ### The "Contexts, Not Topics" Breakthrough
+
 Dan's brain naturally creates deep hierarchical folder structures, but this fights how human cognition actually works. The system should use 2-3 broad contextual categories with tags and links doing organizational work.
 
 ### Zettelkasten Is For Knowledge, Not Everything
+
 Major breakthrough: Zettelkasten is specifically for developing knowledge and ideas, NOT for managing temporary information like todo lists. This distinction significantly reduced Dan's overwhelm about what content belongs in the system.
 
 ### The "Cheat Sheet Pattern"
+
 Dan's coding cheat sheets are his only consistently successful note type. They work because they're:
+
 - Action-oriented (recipes, not reflections)
 - In predictable locations
 - Solve recurring problems
@@ -412,10 +444,13 @@ Dan's coding cheat sheets are his only consistently successful note type. They w
 This pattern should inform all note template design.
 
 ### Block References vs Page References
+
 Dan correctly identified that most block-reference apps provide the same "live copy" functionality—Workflowy's marketing is just marketing. The key differentiator is whether block references are native (Logseq, Roam) or bolted-on (Obsidian with plugins).
 
 ### The Dual-Hierarchy Problem
+
 Dan maintains two parallel hierarchies:
+
 - `C:\ROCETS\[Model]` - Executable code with disciplined naming
 - `..\Work Documents\[Customer]` - Project context, agreements, research
 
@@ -457,6 +492,7 @@ These are structurally separated due to ROCETS' dependency management. The produ
 ## 5. What I've Learned About Dan
 
 ### Professional Context
+
 - NASA aerospace engineer, 12 years experience
 - Works with ROCETS (Fortran-based rocket engine simulator)
 - Builds physics-based computational models for LRE performance/operation
@@ -466,23 +502,27 @@ These are structurally separated due to ROCETS' dependency management. The produ
 - Long uninterrupted blocks with minimal meetings
 
 ### Neurodivergent Profile
+
 - ADHD: Urgent capture needs, context-switching difficulty, activation energy problems
 - OCD: Perfectionism spirals, optimization rabbit holes, 90% abandonment pattern
 - Autism spectrum: Systematic thinking, pattern recognition, deep domain expertise
 
 ### Working Patterns
+
 - Bad days: Start with email → overwhelm → racing mind through undocumented tasks
 - Good days: Substantial coding time on relevant work
 - Peak focus: Not explicitly stated (pending Question 17+)
 - Creates notes in panicked bursts, then nothing for periods
 
 ### Learning Style
+
 - Visual learner (💯^💯)
 - Needs examples and metaphors
 - Blank canvas anxiety
 - Appreciates structured starting points
 
 ### Preferences
+
 - Self-hosted solutions
 - Local data ownership
 - Markdown-based storage
@@ -514,17 +554,17 @@ Questions 9-13 have been answered. The discovery interview is over halfway compl
 
 ## Cross-Reference: Related Conversations in This Project
 
-| Conversation | Key Content | Status |
-|--------------|-------------|--------|
-| ⭐️⭐️⭐️ 🗒️ Note-taking system design | Main discovery interview | **ACTIVE - Question 9** |
-| ⭐️⭐️⭐🔲 Networked note-taking with Zettelkasten | "Contexts not topics" breakthrough | Complete |
-| 🔲 ⭐⭐️⭐️ ZK + HeptaBase + VISUAL references | Visual tool research | Complete |
-| ⭐️🔲 Zettelkasten Example Walkthrough | ZK implementation details, Obsidian templates | Complete |
-| Workflowy's live copy feature marketing claim | Block reference deep dive, Logseq concerns | Complete |
-| Hybrid knowledge management systems | BASB + ZK integration concept | Complete |
-| Handwritten notes in productivity system | Supernote integration planning | Paused |
-| ⏹️ File Explorer alternative | Files app adoption, ROCETS structure | Complete |
-| Note-taking, Obsidian, Zettelkasten, Logseq, block-based | Initial tool comparison | Complete |
+| Conversation                                             | Key Content                                   | Status                   |
+| -------------------------------------------------------- | --------------------------------------------- | ------------------------ |
+| ⭐️⭐️⭐️ 🗒️ Note-taking system design                     | Main discovery interview                      | **ACTIVE - Question 14** |
+| ⭐️⭐️⭐🔲 Networked note-taking with Zettelkasten          | "Contexts not topics" breakthrough            | Complete                 |
+| 🔲 ⭐⭐️⭐️ ZK + HeptaBase + VISUAL references              | Visual tool research                          | Complete                 |
+| ⭐️🔲 Zettelkasten Example Walkthrough                    | ZK implementation details, Obsidian templates | Complete                 |
+| Workflowy's live copy feature marketing claim            | Block reference deep dive, Logseq concerns    | Complete                 |
+| Hybrid knowledge management systems                      | BASB + ZK integration concept                 | Complete                 |
+| Handwritten notes in productivity system                 | Supernote integration planning                | Paused                   |
+| ⏹️ File Explorer alternative                             | Files app adoption, ROCETS structure          | Complete                 |
+| Note-taking, Obsidian, Zettelkasten, Logseq, block-based | Initial tool comparison                       | Complete                 |
 
 ---
 
@@ -533,6 +573,7 @@ Questions 9-13 have been answered. The discovery interview is over halfway compl
 ---
 
 **Document Metadata:**
+
 - Created: January 29, 2026
 - Source Project: Productivity System Design (Claude Project)
 - Migration Target: Unified Project Space

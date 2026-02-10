@@ -7,9 +7,11 @@
 ### 1. Project Vision
 
 #### 1.1 High-Level Goals
+
 Build a comprehensive DIY personal cloud infrastructure centered around a 2018 Mac Mini server ("AstralJunction") to replace commercial cloud services, prioritizing privacy and preventing companies from profiting from personal data.
 
 #### 1.2 Motivations
+
 - **Privacy First**: Take back control of personal data from companies like Google who profit from and mine user data
 - **NASA Compatibility**: Working at NASA with strict IT restrictions that limit cloud services to web-only access—self-hosted solutions with HTTPS access work perfectly within these constraints
 - **Learning Opportunity**: Understand infrastructure deeply rather than relying on abstractions
@@ -19,6 +21,7 @@ Build a comprehensive DIY personal cloud infrastructure centered around a 2018 M
 #### 1.3 Apps, Tools, Utilities, Websites, Services of Interest
 
 **Currently Deployed ✅**
+
 - **volkyra.com** - Personal/wife's website (migrated from AWS to Cloudflare Pages)
 - **test.toomanytabs.space** - Test page via Cloudflare Tunnel
 - **Cloudflare Tunnel** - Secure remote access (running in Docker on AstralJunction)
@@ -26,6 +29,7 @@ Build a comprehensive DIY personal cloud infrastructure centered around a 2018 M
 - **Nginx** - Web server (for test page)
 
 **High Priority - Planned for Deployment**
+
 - **Paperless-ngx** - Document management with OCR, tag-based organization
 - **Plex** - Media server for streaming movie/TV collection
 - **Nextcloud** - Self-hosted file sync/cloud storage (Dropbox replacement)
@@ -33,12 +37,14 @@ Build a comprehensive DIY personal cloud infrastructure centered around a 2018 M
 - **Logseq Sync Server** - Knowledge management / PKM sync
 
 **Infrastructure Components**
+
 - **DIY NAS** - RAID-Z1, ZFS filesystem, TrueNAS SCALE (separate project, see PMR #2)
 - **Backblaze B2** - Offsite encrypted backups with restic
 - **Cloudflare Access** - Authentication using WebAuthn/passkeys (Face ID + fingerprint)
 - **Version control hosting** - For both jj and Mercurial repositories
 
 **Web Projects Mentioned**
+
 1. Dashboard/admin interface for managing services
 2. Home lab documentation site
 3. Photo gallery frontend (with Immich backend)
@@ -48,6 +54,7 @@ Build a comprehensive DIY personal cloud infrastructure centered around a 2018 M
    - Personal book library database with interactive functions
 
 **Tools/Platforms in Use**
+
 - **Proton Services** - VPN (Premium), Mail Bridge, Pass (password manager), Drive
 - **Claude Code** - AI-assisted coding (installed via Homebrew, OAuth authenticated)
 - **Homebrew** - Package manager
@@ -57,6 +64,7 @@ Build a comprehensive DIY personal cloud infrastructure centered around a 2018 M
 - **Termius** - SSH client (iPhone and MacBook)
 
 #### 1.4 Strategic Objectives
+
 1. Establish foundation infrastructure for all self-hosted services
 2. Maintain zero exposure of home IP address
 3. Enable secure remote access from any device (iPhone, MacBook, work computer)
@@ -64,6 +72,7 @@ Build a comprehensive DIY personal cloud infrastructure centered around a 2018 M
 5. Document everything for future reference and troubleshooting
 
 #### 1.5 Long-term Potential / Potential Workflows
+
 - **Mobile-first access**: All systems must work well on iPhone since that's where real usage happens
 - **Cross-device synchronization**: Files, notes, photos accessible from anywhere
 - **Automated workflows**: Supernote → OCR → Logseq pipeline, automatic photo backups
@@ -71,7 +80,9 @@ Build a comprehensive DIY personal cloud infrastructure centered around a 2018 M
 - **Professional use**: Works seamlessly through NASA firewall restrictions
 
 #### 1.6 Unique Value Proposition
+
 A fully self-hosted infrastructure that provides:
+
 - Complete data ownership and privacy
 - NASA firewall compatibility (everything via HTTPS)
 - Enterprise-grade security via Cloudflare (free tier)
@@ -79,6 +90,7 @@ A fully self-hosted infrastructure that provides:
 - Deep learning experience with infrastructure
 
 #### 1.7 Core Philosophies Discussed
+
 - **"The best organizational system is the one you'll actually use"** - Mobile-first design is crucial
 - **"Long-term efficiency over immediate ease of use"** - Worth investing time to understand systems deeply
 - **"Understand fundamental systems rather than relying on abstractions"** - Not vendor-specific knowledge
@@ -90,6 +102,7 @@ A fully self-hosted infrastructure that provides:
 ### 2. Requirements Compilation
 
 #### 2.1 Explicit Requirements
+
 - Headless server operation (no monitor/keyboard connected)
 - Always-on availability (24/7 uptime)
 - Remote access from anywhere (home, work, travel)
@@ -99,6 +112,7 @@ A fully self-hosted infrastructure that provides:
 - Biometric authentication support (Face ID for Dan, fingerprint for wife)
 
 #### 2.2 Implied Requirements
+
 - Low power consumption (Mac Mini is ideal)
 - Quiet operation (home environment)
 - Reliable local network connectivity
@@ -106,6 +120,7 @@ A fully self-hosted infrastructure that provides:
 - Expandable storage architecture
 
 #### 2.3 Derived Requirements
+
 - Static IP address on local network (192.168.70.70)
 - DHCP reservation rather than manual static IP (easier router management)
 - DNS configuration via Cloudflare for all domains
@@ -113,6 +128,7 @@ A fully self-hosted infrastructure that provides:
 - Backup access methods (VNC if SSH fails)
 
 #### 2.4 Potential Edge Cases / Expansion Areas
+
 - Power outage recovery automation
 - ISP IP address changes (Cloudflare Tunnel handles this transparently)
 - Service health monitoring and alerting
@@ -132,6 +148,7 @@ A fully self-hosted infrastructure that provides:
 | Dynamic Services | Paperless-ngx, Plex, etc. | Mac Mini via Cloudflare Tunnel | Full control, Docker containers, hidden home IP |
 
 **Why Cloudflare Tunnel over Port Forwarding:**
+
 - No exposed home IP address
 - No open ports on router (security)
 - Automatic SSL certificate management
@@ -140,6 +157,7 @@ A fully self-hosted infrastructure that provides:
 - Free tier is sufficient for personal use
 
 **Why Docker over Bare Metal:**
+
 - Service isolation
 - Easy deployment and updates
 - Reproducible configurations
@@ -147,17 +165,20 @@ A fully self-hosted infrastructure that provides:
 - Consistent environment across services
 
 **Docker Networking Decision:**
+
 - Use `host.docker.internal` for service routing (initially)
 - Discovered: Mac Mini's LAN IP (192.168.70.70) works more reliably
 - Docker bridge network (172.17.0.1) has connectivity issues with macOS
 
 **Ruled Out Approaches:**
+
 - **GitHub Pages** - Ruled out in favor of Cloudflare Pages (better integration with tunnel)
 - **Direct port forwarding** - Security concerns, home IP exposure
 - **Self-hosted authentication (Authelia)** - "Don't want to reinvent the wheel" - Cloudflare Access is better fit
 - **VPS hosting** - Ongoing costs ($10-50/month), less control, storage costs add up
 
 #### 3.2 Technology Stack
+
 - **Hardware**: 2018 Mac Mini (i7-8700B, 32GB RAM, 128GB SSD)
 - **OS**: macOS (headless operation)
 - **Container Runtime**: Docker Desktop v29.0.1
@@ -168,23 +189,27 @@ A fully self-hosted infrastructure that provides:
 - **Package Manager**: Homebrew v5.0.4
 
 #### 3.3 Frameworks Decided On
+
 - **Cloudflare ecosystem** - Pages, Tunnel, Access, Workers, D1 (database)
 - **Docker Compose** - For multi-container service definitions
 - **WebAuthn/Passkeys** - For biometric authentication
 
 **Frameworks Ruled Out:**
+
 - **Traefik** - Cloudflare handles reverse proxy needs
 - **Let's Encrypt certbot** - Cloudflare handles SSL automatically
 - **Wireguard VPN** - Cloudflare Tunnel provides similar functionality without VPN complexity
 - **Authelia/Authentik** - Cloudflare Access is simpler and better integrated
 
 #### 3.4 Key Architectural Constraints
+
 - Mac Mini has limited internal storage (128GB SSD) - bulk storage must be external/NAS
 - macOS 26.2 (Tahoe) has SSH client bug affecting MacBook → Mac Mini connections
 - Must work within NASA's web-only cloud access restrictions
 - Wife uses Android (fingerprint auth), Dan uses iPhone (Face ID)
 
 #### 3.5 Potential Future Directions
+
 - Run cloudflared directly on host instead of Docker (simpler debugging)
 - Migrate to Linux if macOS limitations become problematic
 - Add monitoring with Uptime Kuma or similar
@@ -196,6 +221,7 @@ A fully self-hosted infrastructure that provides:
 ### Current State of AstralJunction
 
 #### Hardware Configuration
+
 - **Model**: 2018 Mac Mini (Intel)
 - **CPU**: Intel Core i7-8700B (6-core, 12 threads)
 - **RAM**: 32GB
@@ -206,6 +232,7 @@ A fully self-hosted infrastructure that provides:
 - **MAC Address (Ethernet)**: 14:9D:99:81:E9:F2
 
 #### Network Configuration
+
 - **Router**: TP-Link Deco mesh system
 - **Subnet**: 192.168.68.x/22 (255.255.252.0)
 - **Router IP**: 192.168.68.1
@@ -214,6 +241,7 @@ A fully self-hosted infrastructure that provides:
 - **Remote Access**: Screen Sharing (VNC) at vnc://192.168.70.70
 
 #### macOS Configuration
+
 - **Computer Name**: AstralJunction
 - **Username**: dpriley
 - **Remote Login**: Enabled (SSH daemon running)
@@ -223,10 +251,12 @@ A fully self-hosted infrastructure that provides:
 - **Peripherals**: Disconnected (headless)
 
 #### Active Docker Services
+
 1. **cloudflared** - Cloudflare Tunnel daemon (auto-restart enabled)
 2. **test-webserver** (nginx:alpine) - Test page on port 8080
 
 #### Cloudflare Configuration
+
 - **Account**: Danril3y@gmail.com
 - **Tunnel Name**: astraljunction
 - **Tunnel ID**: 93694f44-5a63-49ef-bbd8-ace63963fb46
@@ -238,6 +268,7 @@ A fully self-hosted infrastructure that provides:
 | volkyra.com | Production, Cloudflare Pages deployment |
 
 #### Files & Directories
+
 ```
 /Users/dpriley/
 ├── .cloudflared/
@@ -254,6 +285,7 @@ A fully self-hosted infrastructure that provides:
 ### Known Issues 🔴
 
 **CRITICAL: SSH from MacBook Doesn't Work**
+
 - **Issue**: macOS 26.2 (Tahoe) networking bug on MacBook client
 - **Error**: "No route to host" when SSH'ing from MacBook to Mac Mini
 - **Working Alternatives**:
@@ -265,6 +297,7 @@ A fully self-hosted infrastructure that provides:
 - **Resolution**: Wait for macOS 26.3 fix; use workarounds
 
 **Cloudflare Tunnel Docker Networking Complexity**
+
 - `host.docker.internal` doesn't always resolve from inside containers
 - Docker bridge network (172.17.0.1) has issues reaching Mac host services
 - **Working Solution**: Use Mac's LAN IP (192.168.70.70) in service configurations
@@ -327,6 +360,7 @@ A fully self-hosted infrastructure that provides:
 ## III. Conversation Context Summary
 
 ### 3.1 Key Discussion Points
+
 - Extensive troubleshooting of SSH connectivity issues between MacBook and Mac Mini
 - Deep dive into Cloudflare Tunnel architecture and configuration
 - Comparison of self-hosted vs cloud-hosted solutions
@@ -334,22 +368,26 @@ A fully self-hosted infrastructure that provides:
 - Two-tier hosting strategy (Cloudflare Pages + Tunnel)
 
 ### 3.2 Notable Insights
+
 - **Mobile-first matters**: "The best organizational system is the one you'll actually use"
 - **Cloudflare's free tier is remarkably generous** for personal infrastructure
 - **Clean separation principle**: Compute on Mac Mini, storage on NAS
 - **SSH bug is Apple's fault**: macOS 26.2 has kernel-level networking issues
 
 ### 3.3 Unresolved Questions
+
 - Should cloudflared run on host or in Docker? (Docker has networking complexity)
 - Best practices for automated Docker container updates?
 - How to implement service health monitoring?
 
 ### 3.4 Potential Pivot Points
+
 - If macOS limitations persist, consider migrating to Linux
 - If Cloudflare Tunnel complexity continues, evaluate alternatives
 - May need to implement port forwarding as backup for SSH/VNC access
 
 ### 3.5 User Preferences & Patterns
+
 - **TL;DR requested** at start of complex responses
 - **Section-by-section TL;DRs** for multi-part answers
 - **Reprint instructions** after debugging/clarification
@@ -359,6 +397,7 @@ A fully self-hosted infrastructure that provides:
 - **Uses jj (Jujutsu)** for version control (not Git)
 
 ### 3.6 Additional Goals/Interests Mentioned
+
 - Custom house design project (Queen Anne Victorian style)
 - ~1,000 architectural inspiration photos needing organization
 - Learning more Fortran (limited fluency despite 13 years of use)

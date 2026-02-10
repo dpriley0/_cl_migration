@@ -547,6 +547,13 @@ Each improvement to this system:
 
 ## 12. Related Projects
 
+### NASA/ROCETS Work
+
+- Daily notes capture accomplishments
+- Bi-weekly memos required by manager
+- Dashboard reduces memo friction
+- Work details kept appropriately vague
+
 ### Homelab (AstralJunction)
 
 - Provides infrastructure foundation
@@ -556,7 +563,7 @@ Each improvement to this system:
 
 ### PM Methodology
 
-- This dashboard implements the methodology
+- **This dashboard implements the methodology**
 - Serves as proof of concept
 - Feeds back improvements to methodology
 - Meta: documenting methodology with the methodology
@@ -567,13 +574,6 @@ Each improvement to this system:
 - First Cloudflare Pages deployment
 - Proved auto-deploy workflow
 - Template for this project's deployment
-
-### NASA/ROCETS Work
-
-- Daily notes capture accomplishments
-- Bi-weekly memos required by manager
-- Dashboard reduces memo friction
-- Work details kept appropriately vague
 
 ---
 
