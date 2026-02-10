@@ -24,7 +24,7 @@ Build a comprehensive, personalized productivity system that addresses core work
 1. **Context-Switching Difficulties** - Severe difficulty transitioning between tasks; getting pulled into rabbit holes when attempting quick checks
 2. **Activation Energy Problems** - Difficulty starting work, especially when facing email overwhelm or undocumented obligations
 3. **Project Abandonment at 90%** - Persistent pattern of abandoning projects near completion due to perfectionism and optimization spirals
-4. **Scattered Note-Taking** - "Write-only" notes across multiple applications that become unfindable and unusable
+4. **Scattered Note-Taking** - "Write-only" notes across multiple applications (and physical media) that become overwhelming and therefore, unusable
 5. **Undocumented Planning** - Mental task lists that create anxiety and cognitive load
 
 **Ultimate Vision:** Transform scattered, panic-driven capture across multiple apps into a coherent knowledge and project management architecture that accommodates neurodivergent processing while enabling sustained productivity.
@@ -41,20 +41,20 @@ Build a comprehensive, personalized productivity system that addresses core work
 
 **Note-Taking & Knowledge Management (Extensively Researched):**
 
-| Tool                | Status           | Key Notes                                                                                                                                        |
-| ------------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Logseq**          | Strong Candidate | Block-based, file-based (markdown), Zettelkasten-friendly, BUT concerns about slowing development and new database version breaking self-hosting |
-| **Obsidian**        | Strong Candidate | More stable, larger ecosystem, Canvas plugin for visual work, better long-term bet, BUT block references feel "bolted on" vs native              |
-| **Heptabase**       | Researched       | Visual/canvas-based, good for blank canvas anxiety IF using Journal-first workflow, BUT not as strong on technical documentation                 |
-| **Roam Research**   | Ruled Out        | Too expensive ($15/mo), cloud-only                                                                                                               |
-| **UpNote**          | Currently Using  | Polished, approachable, supports tagging and linking, BUT encourages hierarchical thinking                                                       |
-| **Remnote**         | Considered       | Good for spaced repetition, more academic-focused                                                                                                |
-| **Workflowy**       | Researched       | "Live Copy" feature is marketing fluff—all block-reference apps do this                                                                          |
-| **Capacities**      | Mentioned        | Block-based with object types, ~$10/mo                                                                                                           |
-| **Athens Research** | Ruled Out        | Development has slowed/potentially abandoned                                                                                                     |
-| **Tana**            | Researched       | Promising but early                                                                                                                              |
-| **Zettlr**          | Mentioned        | Markdown-based                                                                                                                                   |
-| **Joplin**          | Mentioned        | Open source option                                                                                                                               |
+| Tool                | Status                    | Key Notes                                                                                                                                        |
+| ------------------- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Logseq**          | **Most Likely Candidate** | Block-based, file-based (markdown), Zettelkasten-friendly, BUT concerns about slowing development and new database version breaking self-hosting |
+| **Obsidian**        | Strong Candidate          | More stable, larger ecosystem, Canvas plugin for visual work, better long-term bet, BUT block references feel "bolted on" vs native              |
+| **Heptabase**       | Researched                | Visual/canvas-based, good for blank canvas anxiety IF using Journal-first workflow, BUT not as strong on technical documentation                 |
+| **Roam Research**   | Ruled Out                 | Too expensive ($15/mo), cloud-only                                                                                                               |
+| **UpNote**          | Currently Using           | Polished, approachable, supports tagging and linking, BUT not suitable for our markdown-based, interconnected documentation plan                 |
+| **Remnote**         | Considered                | Good for spaced repetition, more academic-focused                                                                                                |
+| **Workflowy**       | Researched                | "Live Copy" feature is marketing fluff—all block-reference apps do this                                                                          |
+| **Capacities**      | Mentioned                 | Block-based with object types, ~$10/mo                                                                                                           |
+| **Athens Research** | Ruled Out                 | Development has slowed/potentially abandoned                                                                                                     |
+| **Tana**            | Researched                | Promising but early                                                                                                                              |
+| **Zettlr**          | Mentioned                 | Markdown-based                                                                                                                                   |
+| **Joplin**          | Mentioned                 | Open source option                                                                                                                               |
 
 **Visual/Canvas Tools (Researched for Visual Learning Style):**
 
@@ -84,6 +84,8 @@ Build a comprehensive, personalized productivity system that addresses core work
 - Planning OCR automation: Supernote → OCR → Logseq workflow
 
 **Other Current Tools:**
+
+All of these need consolidation once system is configured and "running".
 
 - Evernote (notes scattered here)
 - OneNote (notes scattered here)
@@ -242,6 +244,7 @@ Based on discovery interview responses:
 **Decision: "Contexts, Not Topics" Organization**
 
 - *Rationale:* Dan's brain naturally works in associative networks, not hierarchies. Hierarchical organization fights natural retrieval patterns.
+
 - *Proposed Structure:*
   
   ```
@@ -387,6 +390,8 @@ Based on discovery interview responses:
 
 ### Near-Term
 
+- [ ] Note-taking tool implementation
+  - [ ] Make 'daily notes' a habit so he can automate the bi-weekly notes he's required to generate for his supervisors
 - [ ] Paperless-ngx full deployment
 - [ ] Visual canvas workflow for brainstorming
 - [ ] Cheat sheet template system
@@ -394,6 +399,7 @@ Based on discovery interview responses:
 
 ### Medium-Term
 
+- [ ] Automation of bi-weekly notes synthesized from 'daily notes'
 - [ ] Spaced repetition integration for learning
 - [ ] Project backlog markdown file system
 - [ ] Cross-project insight surfacing
@@ -454,7 +460,7 @@ Dan maintains two parallel hierarchies:
 - `C:\ROCETS\[Model]` - Executable code with disciplined naming
 - `..\Work Documents\[Customer]` - Project context, agreements, research
 
-These are structurally separated due to ROCETS' dependency management. The productivity system must bridge this gap without creating duplication.
+These are structurally separated due to his desire not to clutter up his ROCETS models' directories. The productivity system must bridge this gap without creating duplication.
 
 ## 2. Notable Insights
 
